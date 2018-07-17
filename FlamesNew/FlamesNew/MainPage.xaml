@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlamesNew.MainPage">
+
+    <StackLayout Orientation="Vertical" Padding="20" BackgroundColor="#FFFFFF">
+
+        <Image Source="heart.png" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" WidthRequest="150" HeightRequest="150" />
+        <Label TextColor="#B92626" FontAttributes="Bold" FontSize = "Large" Text="LOVE CALCULATOR" HorizontalOptions="CenterAndExpand" />
+        <Entry Text="{Binding Name}" Placeholder="Your Name" FontSize="Medium" />
+        <Entry Text="{Binding PartnerName}" Placeholder="Partner's Name" FontSize="Medium" />
+        <Button Text="Check Flames" Command="{Binding FlamesCommand}" Clicked="OnFlamesClicked" BackgroundColor="#B92626" TextColor="#FFFFFF"/>
+        <ContentView Padding="20" BackgroundColor="#FFDDDD" IsVisible="{Binding ShouldDisplayContentView}">
+            <ContentView.Content>
+                <StackLayout Orientation="Vertical">
+                    <Label TextColor="#ADB2BB" FontAttributes="Bold" FontSize = "Medium" Text="Relationship" HorizontalOptions="CenterAndExpand" />
+                    <Label TextColor="#B92626" FontAttributes="Bold" FontSize = "Medium" Text="{Binding Result.relationship}" HorizontalOptions="CenterAndExpand"/>
+                    <Label TextColor="#ADB2BB" FontAttributes="Bold" FontSize = "Medium" Text="Meaning" HorizontalOptions="CenterAndExpand" />
+                    <Label TextColor="#B92626" FontAttributes="Bold" FontSize = "Medium" Text="{Binding Result.meaning}" HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+            </ContentView.Content>
+        </ContentView>
+
+        <Label TextColor="#000000" FontAttributes="Bold" FontSize = "Small" Text="{Binding DeveloperName, StringFormat='Developed By: {0:N}'}" HorizontalOptions="CenterAndExpand" />
+    </StackLayout>
+
+</ContentPage>
